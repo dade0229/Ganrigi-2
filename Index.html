@@ -1,0 +1,291 @@
+ <!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0e6670"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="განრიგი"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAC/ElEQVR4nO3dsW0WMQCAUQLUUCKmSJlVmAAkqjABYoJQIWUDStagZApEiUSLREGDRD7g9yGfc3mvt5ycvviSOzv/2aPnl/fgJvf3/gJYlzhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJg/Rw5mTfv3yeOd1RPXjydM5EVg6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA7S1FP23z68nzndUT1+8WrORFYOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhI4iCJgyQOkjhIU7cJnuTtp4+nDrk8vxiba2Dj3dfrq/Xn2mjRlWOgjJ+jBgaObcl8/OLVwMCZc223YhxjZYwN33jRTxo+c67/YsU4WIQ4SOIgiYMkDpI4SOIgiYMkDpI4SOIgrRjH8MvVgeEbX3ieNHzmXP/FinGwiEXjGFs8Ls8vBgaO/UR+vb4aGDhzru3W3eyz8eZykpmXfq+dOwMWXTlYgThI4iCJgyQOkjhI4iCJgyQO0rpPSI96RPEWHYc8e/T8ctpk//5NbjnddeqlvHVz3emP1DjqEUXHITkOcZDEQRIHSRwkcZDEQRIHSRwkcZDEQVoxjqMeUXQckuNY9JX9vePusdg+17TXs+vGQTnmfo5d/oH3wcy8hn7nIImDNDsOd5YtJl+9HVYOfYyxh5Sb3aEP47F4nGSvyzX1OcfvPPn4qx1/kHa+rVhC/mzf67PzyvGr7Q+Jb8Xj84FPsHv97v3YXBstFMdd8Obls+Gx8xPx18o8W8rYPnyAOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJI55Nr458+KNhXhlP9vAy1X7OViO2wpJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHKQfVYGllvHYZEkAAAAASUVORK5CYII="><title>ვიზიტების განრიგი</title>
+<style>
+:root{--bg:#f2f5f6;--card:#fff;--ink:#14262b;--mt:#5d7177;--ln:#d9e2e4;--pri:#0e6670;--c:#0e6670;--v:#3a5ba9;--o:#8a4fb0;--free:#dff1e6;--part:#fbeccb;--full:#f6d3cf}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.4 system-ui,"Noto Sans Georgian","BPG Nino Mtavruli",sans-serif;background:var(--bg);color:var(--ink);padding-bottom:84px}
+header{background:var(--pri);color:#fff;padding:14px 14px 10px;position:sticky;top:0;z-index:5}
+#ttl{font-size:21px;font-weight:700;margin-bottom:8px}
+.nav{display:flex;gap:8px}
+.nav button{flex:1;background:#ffffff26;color:#fff;border:0;border-radius:10px;padding:10px 4px;font:inherit;font-weight:600}
+#tabs{display:flex;overflow-x:auto;background:var(--card);border-bottom:1px solid var(--ln)}
+#tabs button{flex:1;white-space:nowrap;padding:13px 12px;border:0;background:none;font:inherit;color:var(--mt);border-bottom:3px solid transparent}
+#tabs button.on{color:var(--pri);border-color:var(--pri);font-weight:700}
+main{padding:12px;max-width:720px;margin:auto}
+.day{background:var(--card);border-radius:14px;padding:6px 12px 12px;margin-bottom:10px;border:1px solid var(--ln)}
+.day{scroll-margin-top:150px}
+.day.today{border-color:var(--pri);box-shadow:0 0 0 2px #0e667033}
+.day h3{display:flex;justify-content:space-between;align-items:center;font-size:16px;margin:8px 0}
+.day h3 button{width:38px;height:38px;border-radius:50%;border:1px solid var(--ln);background:var(--bg);font-size:22px;color:var(--pri)}
+.mt{color:var(--mt);margin:4px 0;font-size:14px}
+.ap{display:flex;gap:12px;padding:10px;margin-top:6px;border-radius:10px;border-left:6px solid var(--c);background:#f6f9f9}
+.ap.v{border-color:var(--v)}.ap.o{border-color:var(--o)}
+.ap.cancelled{opacity:.5;text-decoration:line-through}
+.ap .tt{font-weight:700;min-width:96px}
+.ap small{display:block;color:var(--mt)}
+.rem{background:#e6f1f2;border-radius:12px;padding:10px 12px;margin-bottom:8px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.grid .h{text-align:center;font-size:13px;color:var(--mt);padding:4px 0}
+.cell{aspect-ratio:1/1.05;border:0;border-radius:10px;background:#e9eef0;font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}
+.cell small{font-size:11px;color:var(--mt)}
+.cell.free{background:var(--free)}.cell.part{background:var(--part)}.cell.full{background:var(--full)}.cell.off{opacity:.45}
+.cell.td{outline:2px solid var(--pri)}
+.lg{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:var(--mt)}
+.lg i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.chip{border:1px solid #9bd0ab;background:var(--free);border-radius:10px;padding:10px 14px;font:inherit;font-weight:600;color:var(--ink)}
+.bz{background:var(--part);border-radius:8px;padding:6px 10px;margin-top:4px;font-size:14px}
+.seg{display:flex;gap:6px;margin-bottom:10px}
+.seg button,.btn{flex:1;border:1px solid var(--ln);background:var(--card);border-radius:10px;padding:12px;font:inherit;color:var(--ink)}
+.seg button.on,.btn.p{background:var(--pri);color:#fff;border-color:var(--pri);font-weight:600}
+.btn{display:block;width:100%;margin-top:8px}
+.btn.d{color:#b3261e;border-color:#e3b3af}
+#fab{position:fixed;right:14px;bottom:16px;background:var(--pri);color:#fff;border:0;border-radius:28px;padding:16px 22px;font:inherit;font-weight:700;box-shadow:0 4px 14px #0003;z-index:6}
+#m{display:none;position:fixed;inset:0;background:#000a;z-index:20;overflow:auto}
+#m .box{background:var(--card);margin:20px auto;max-width:520px;border-radius:16px;padding:16px;width:calc(100% - 24px)}
+label{display:block;font-size:14px;color:var(--mt);margin:10px 0 4px}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--ln);border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+.r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ck{display:flex;gap:6px;flex-wrap:wrap}
+.ck label{display:flex;align-items:center;gap:6px;margin:0;color:var(--ink);border:1px solid var(--ln);border-radius:10px;padding:10px}
+.ck input{width:auto}
+.sw{display:flex;align-items:center;gap:8px;color:var(--ink);margin:12px 0}.sw input{width:auto}
+#pr{display:none}
+@media print{body>*:not(#pr){display:none!important}#pr{display:block}#pr h2{margin:14px 0 4px}#pr li{margin:2px 0}}
+</style>
+</head>
+<body>
+<header>
+  <div id="ttl"></div>
+  <div class="nav">
+    <button onclick="mv(-1)">‹</button>
+    <button onclick="cur=new Date();draw()">დღეს</button>
+    <button onclick="mv(1)">›</button>
+    <button onclick="shareBox()">გაზიარება</button>
+  </div>
+</header>
+<nav id="tabs"></nav>
+<main id="v"></main>
+<button id="fab" onclick="openForm(0,ds(cur))">+ ჯავშანი</button>
+<div id="m"></div>
+<div id="pr"></div>
+
+<script>
+/* ===== მონაცემები (ინახება ბრაუზერში, localStorage) ===== */
+const KEY='vizitebis_ganrigi_v1';
+let D;
+try{D=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!D||!D.a)D={set:{days:[1,2,3,4,5],s:600,e:1080,dur:30,bs:780,be:840},a:[]};
+/* ავტომატური შენახვა ორ ადგილას: localStorage + IndexedDB (თუ ერთი წაიშლება, მეორიდან აღდგება) */
+let okLS=true;
+try{localStorage.setItem('_t','1');localStorage.removeItem('_t')}catch(e){okLS=false}
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+const idb=()=>new Promise((res,rej)=>{try{const r=indexedDB.open('ganrigi',1);r.onupgradeneeded=()=>r.result.createObjectStore('k');r.onsuccess=()=>res(r.result);r.onerror=()=>rej()}catch(e){rej()}});
+const idbSet=v=>idb().then(db=>db.transaction('k','readwrite').objectStore('k').put(v,'D')).catch(()=>{});
+const idbGet=()=>idb().then(db=>new Promise(res=>{const q=db.transaction('k').objectStore('k').get('D');q.onsuccess=()=>res(q.result);q.onerror=()=>res(null)})).catch(()=>null);
+function flash(){let t=document.querySelector('#toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#14262b;color:#fff;padding:8px 14px;border-radius:20px;font-size:14px;z-index:30;transition:opacity .3s';document.body.appendChild(t)}t.textContent='✓ შენახულია';t.style.opacity=1;clearTimeout(flash.h);flash.h=setTimeout(()=>t.style.opacity=0,1200)}
+const save=()=>{D.ts=Date.now();const j=JSON.stringify(D);try{localStorage.setItem(KEY,j)}catch(e){okLS=false}idbSet(j);flash()};
+
+const $=s=>document.querySelector(s);
+const WD=['ორშ','სამ','ოთხ','ხუთ','პარ','შაბ','კვი'];
+const MO=['იანვარი','თებერვალი','მარტი','აპრილი','მაისი','ივნისი','ივლისი','აგვისტო','სექტემბერი','ოქტომბერი','ნოემბერი','დეკემბერი'];
+const TL={c:'კონსულტაცია',v:'ვიზიტი',o:'ონლაინ'};
+const SL={planned:'დაგეგმილი',confirmed:'დადასტურებული',cancelled:'გაუქმებული'};
+let cur=new Date(),view='w',fr='w';
+
+/* ===== დამხმარე ფუნქციები ===== */
+const p2=n=>String(n).padStart(2,'0');
+const ds=d=>d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());
+const pd=s=>new Date(s+'T00:00');
+const tm=m=>p2(Math.floor(m/60))+':'+p2(m%60);
+const pt=v=>{const [a,b]=v.split(':');return +a*60+ +b};
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const dl=d=>WD[(d.getDay()+6)%7]+', '+d.getDate()+' '+MO[d.getMonth()];
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const weekDays=d=>{const m=addD(d,-((d.getDay()+6)%7));return [0,1,2,3,4,5,6].map(i=>addD(m,i))};
+const monthDays=d=>{const n=new Date(d.getFullYear(),d.getMonth()+1,0).getDate();return Array.from({length:n},(_,i)=>new Date(d.getFullYear(),d.getMonth(),i+1))};
+const list=s=>D.a.filter(a=>a.date==s).sort((x,y)=>x.s-y.s);
+const active=s=>list(s).filter(a=>a.status!='cancelled');
+
+/* თავისუფალი სლოტები: null = დასვენების დღე */
+function slots(s){
+  const S=D.set;if(!S.days.includes(pd(s).getDay()))return null;
+  const busy=active(s),c=new Set();
+  /* საწყისი დროები: ბადე + ყოველი ვიზიტის დასრულების მომენტი + შესვენების დასასრული */
+  for(let t=S.s;t+S.dur<=S.e;t+=S.dur)c.add(t);
+  busy.forEach(a=>c.add(a.e));c.add(S.be);
+  return [...c].sort((x,y)=>x-y).filter(t=>t>=S.s&&t+S.dur<=S.e&&!(t<S.be&&t+S.dur>S.bs)&&!busy.some(a=>a.s<t+S.dur&&a.e>t));
+}
+
+/* ===== ხედები ===== */
+function title(){
+  if(view=='m'||(view=='f'&&fr=='m'))return MO[cur.getMonth()]+' '+cur.getFullYear();
+  if(view=='w'||view=='f'){const w=weekDays(cur),a=w[0],b=w[6];
+    return a.getMonth()==b.getMonth()?a.getDate()+'–'+b.getDate()+' '+MO[b.getMonth()]+' '+b.getFullYear():a.getDate()+' '+MO[a.getMonth()]+' – '+b.getDate()+' '+MO[b.getMonth()]}
+  return view=='p'?'პაციენტები':'პარამეტრები';
+}
+function mv(n){
+  if(view=='m'||(view=='f'&&fr=='m'))cur=new Date(cur.getFullYear(),cur.getMonth()+n,1);
+  else cur=addD(cur,7*n);
+  draw();
+}
+function draw(){
+  $('#ttl').textContent=title();
+  $('#tabs').innerHTML=[['w','კვირა'],['m','თვე'],['f','თავისუფალი'],['p','პაციენტები'],['s','პარამეტრები']]
+    .map(([k,n])=>`<button class="${k==view?'on':''}" onclick="view='${k}';draw()">${n}</button>`).join('');
+  $('#v').innerHTML={w:wk,m:mon,f:fre,p:pat,s:setg}[view]();
+  if(view=='p')pr2();
+}
+const card=a=>`<div class="ap ${a.type} ${a.status}" onclick="openForm(${a.id})"><span class="tt">${tm(a.s)}–${tm(a.e)}</span><span><b>${esc(a.name)}</b><small>${TL[a.type]}${a.place?', '+esc(a.place):''}${a.phone?', '+esc(a.phone):''}${a.status!='planned'?', '+SL[a.status]:''}</small></span></div>`;
+
+function rem(t,s){const L=active(s);return `<div class="rem"><b>${t}:</b> ${L.length?L.map(a=>tm(a.s)+' '+esc(a.name)).join('; '):'ვიზიტი არ არის'}</div>`}
+function wk(){
+  const t=ds(new Date());
+  const old=!D.lb||(Date.now()-D.lb)>7*864e5;
+  let h=(okLS?'':'<div class="rem" style="background:#f6d3cf">ამ ბრაუზერში შენახვა შეზღუდულია. ჩაწერილი მონაცემები შეიძლება დაიკარგოს, ამიტომ ხშირად გააკეთეთ ექსპორტი (პარამეტრები).</div>')+(D.a.length&&old?`<div class="rem" style="background:#fbeccb">სარეზერვო ასლი ${D.lb?'7 დღეზე მეტია':'ჯერ'} არ შეგინახავთ. <a href="#" onclick="exportJ();return false" style="color:var(--pri);font-weight:700">შენახვა</a></div>`:'')+rem('დღეს',t)+rem('ხვალ',ds(addD(new Date(),1)));
+  weekDays(cur).forEach(d=>{const s=ds(d),L=list(s);
+    h+=`<section class="day ${s==t?'today':''}"><h3>${dl(d)}<button onclick="openForm(0,'${s}')">+</button></h3>${L.length?L.map(card).join(''):'<p class="mt">ვიზიტები არ არის</p>'}</section>`});
+  return h;
+}
+function mon(){
+  const days=monthDays(cur),off=(days[0].getDay()+6)%7,t=ds(new Date());
+  let h='<div class="grid">'+WD.map(x=>`<div class="h">${x}</div>`).join('')+'<div></div>'.repeat(off);
+  days.forEach(d=>{const s=ds(d),sl=slots(s),n=active(s).length;
+    const k=sl===null?'off':n==0?'free':sl.length==0?'full':'part';
+    h+=`<button class="cell ${k} ${s==t?'td':''}" onclick="cur=pd('${s}');view='w';draw()">${d.getDate()}<small>${n?n+' ვიზ.':sl===null?'':'თავისუფ.'}</small></button>`});
+  return h+'</div><div class="lg"><span><i style="background:var(--free)"></i>თავისუფალი</span><span><i style="background:var(--part)"></i>ნაწილობრივ</span><span><i style="background:var(--full)"></i>სრულად დაკავებული</span></div><p class="mt">დააჭირეთ დღეს, რომ კვირის ხედში გახსნათ.</p>';
+}
+function fre(){
+  const days=(fr=='w'?weekDays(cur):monthDays(cur)),t=ds(new Date());
+  let h=`<div class="seg"><button class="${fr=='w'?'on':''}" onclick="fr='w';draw()">კვირა</button><button class="${fr=='m'?'on':''}" onclick="fr='m';draw()">თვე</button></div><button class="btn p" style="margin:0 0 10px" onclick="first()">პირველი თავისუფალი დრო</button>`;
+  days.forEach(d=>{const s=ds(d);if(s<t)return;const sl=slots(s);if(sl===null)return;
+    h+=`<section class="day"><h3>${dl(d)}</h3><div class="chips">${sl.map(x=>`<button class="chip" onclick="openForm(0,'${s}',${x})">${tm(x)}</button>`).join('')||'<span class="mt">თავისუფალი დრო არ არის</span>'}</div>${active(s).map(a=>`<div class="bz">${tm(a.s)}–${tm(a.e)} ${esc(a.name)}</div>`).join('')}</section>`});
+  return h+'<p class="mt">მწვანე დროზე დაჭერით ჯავშნის ფორმა იხსნება.</p>';
+}
+function first(){
+  const n=new Date(),nm=n.getHours()*60+n.getMinutes();
+  for(let i=0;i<180;i++){const s=ds(addD(n,i)),sl=slots(s);if(!sl)continue;
+    const x=sl.find(t=>i>0||t>=nm);if(x!=null){openForm(0,s,x);return}}
+  alert('180 დღეში თავისუფალი დრო ვერ მოიძებნა');
+}
+function pat(){return '<input id="q" placeholder="ძებნა სახელით ან ტელეფონით" oninput="pr2()"><div id="pl" style="margin-top:10px"></div>'}
+function pr2(){
+  const q=($('#q').value||'').toLowerCase(),g={};
+  D.a.forEach(a=>{const k=(a.phone||a.name).trim();(g[k]=g[k]||[]).push(a)});
+  const h=Object.values(g).filter(L=>L.some(a=>(a.name+' '+a.phone).toLowerCase().includes(q)))
+    .map(L=>{L.sort((x,y)=>y.date.localeCompare(x.date)||y.s-x.s);return `<section class="day"><h3>${esc(L[0].name)}</h3><p class="mt">${esc(L[0].phone||'ნომრის გარეშე')}</p>${L.map(a=>`<div class="ap ${a.type} ${a.status}" onclick="openForm(${a.id})"><span class="tt">${dl(pd(a.date))}<br>${tm(a.s)}</span><span><small>${TL[a.type]}, ${SL[a.status]}</small></span></div>`).join('')}</section>`}).join('');
+  $('#pl').innerHTML=h||'<p class="mt">პაციენტი ვერ მოიძებნა</p>';
+}
+
+/* ===== პარამეტრები და სარეზერვო ასლი ===== */
+function setg(){
+  const S=D.set;
+  return `<section class="day"><label>სამუშაო დღეები</label><div class="ck">${[1,2,3,4,5,6,0].map(d=>`<label><input type="checkbox" class="sd" value="${d}" ${S.days.includes(d)?'checked':''} onchange="saveSet()">${WD[(d+6)%7]}</label>`).join('')}</div>
+  <div class="r2"><div><label>დაწყება</label><input type="time" id="s-s" value="${tm(S.s)}" onchange="saveSet()"></div><div><label>დასრულება</label><input type="time" id="s-e" value="${tm(S.e)}" onchange="saveSet()"></div>
+  <div><label>შესვენება-დან</label><input type="time" id="s-bs" value="${tm(S.bs)}" onchange="saveSet()"></div><div><label>შესვენება-მდე</label><input type="time" id="s-be" value="${tm(S.be)}" onchange="saveSet()"></div></div>
+  <label>ვიზიტის ხანგრძლივობა</label><select id="s-d" onchange="saveSet()">${[15,30,45,60].map(x=>`<option ${x==S.dur?'selected':''} value="${x}">${x} წუთი</option>`).join('')}</select></section>
+  <section class="day"><h3>სარეზერვო ასლი</h3><p class="mt">ტელეფონის გასუფთავებისას მონაცემები იკარგება. შეინახეთ ასლი კვირაში ერთხელ.</p><button class="btn p" onclick="exportJ()">ექსპორტი (JSON)</button><button class="btn" onclick="$('#imp').click()">იმპორტი</button><input type="file" id="imp" accept=".json" hidden onchange="importJ(this)"></section>`;
+}
+function saveSet(){
+  D.set={days:[...document.querySelectorAll('.sd:checked')].map(x=>+x.value),s:pt($('#s-s').value),e:pt($('#s-e').value),bs:pt($('#s-bs').value),be:pt($('#s-be').value),dur:+$('#s-d').value};
+  save();
+}
+async function dl_(name,txt,type){
+  /* ტელეფონზე: გაზიარების მენიუ (WhatsApp-ში ფაილად გაგზავნისთვის) */
+  try{const f=new File([txt],name,{type});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){await navigator.share({files:[f],title:name});return}}catch(e){if(e&&e.name=='AbortError')return}
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove()}
+function exportJ(){D.lb=Date.now();save();dl_('ganrigi-backup-'+ds(new Date())+'.json',JSON.stringify(D),'application/json')}
+function importJ(el){
+  const f=el.files[0];if(!f)return;const r=new FileReader();
+  r.onload=()=>{try{const x=JSON.parse(r.result);if(!x.a||!x.set)throw 0;
+    if(confirm('მიმდინარე მონაცემები ჩანაცვლდება. გავაგრძელოთ?')){D=x;save();draw()}}catch(e){alert('ფაილი არასწორია')}};
+  r.readAsText(f);
+}
+
+/* ===== ჯავშნის ფორმა ===== */
+const modal=h=>{$('#m').innerHTML='<div class="box">'+h+'</div>';$('#m').style.display='block';document.body.style.overflow='hidden'};
+const closeM=()=>{$('#m').style.display='none';document.body.style.overflow=''};
+$('#m').addEventListener('click',e=>{if(e.target.id=='m')closeM()});
+function openForm(id,date,time){
+  const S=D.set,t0=time!=null?time:S.s;
+  const a=id?D.a.find(x=>x.id==id):{date:date||ds(cur),s:t0,e:t0+S.dur,name:'',phone:'',type:'c',place:'',note:'',status:'planned'};
+  modal(`<h3 style="margin:0">${id?'ჯავშნის რედაქტირება':'ახალი ჯავშანი'}</h3>
+  <label>თარიღი</label><input type="date" id="f-d" value="${a.date}">
+  <div class="r2"><div><label>დან</label><input type="time" id="f-s" value="${tm(a.s)}" onchange="$('#f-e').value=tm(pt(this.value)+${S.dur})"></div><div><label>მდე</label><input type="time" id="f-e" value="${tm(a.e)}"></div></div>
+  <label>პაციენტის სახელი და გვარი</label><input id="f-n" value="${esc(a.name)}">
+  <label>ტელეფონი</label><input id="f-p" type="tel" value="${esc(a.phone)}">
+  <div class="r2"><div><label>ტიპი</label><select id="f-t">${Object.keys(TL).map(k=>`<option value="${k}" ${k==a.type?'selected':''}>${TL[k]}</option>`).join('')}</select></div>
+  <div><label>სტატუსი</label><select id="f-st">${Object.keys(SL).map(k=>`<option value="${k}" ${k==a.status?'selected':''}>${SL[k]}</option>`).join('')}</select></div></div>
+  <label>ადგილი</label><input id="f-pl" value="${esc(a.place)}">
+  <label>შენიშვნა</label><textarea id="f-no" rows="2">${esc(a.note)}</textarea>
+  ${id?'':`<label>გამეორება</label><select id="f-r"><option value="0">არ მეორდება</option><option value="3">ყოველკვირა, კიდევ 3-ჯერ</option><option value="7">ყოველკვირა, კიდევ 7-ჯერ</option><option value="11">ყოველკვირა, კიდევ 11-ჯერ</option></select>`}
+  <button class="btn p" onclick="saveA(${id||0})">შენახვა</button>
+  ${id&&a.phone?`<a class="btn" href="tel:${esc(a.phone)}" style="text-align:center;text-decoration:none;color:var(--ink)">დარეკვა</a>`:''}
+  ${id?`<button class="btn" onclick="notify(${id},'wa')">შეხსენება პაციენტს (WhatsApp)</button><button class="btn" onclick="notify(${id},'sms')">შეხსენება პაციენტს (SMS)</button><button class="btn d" onclick="delA(${id})">წაშლა</button>`:''}
+  <button class="btn" onclick="closeM()">დახურვა</button>`);
+}
+function saveA(id){
+  const a={id:id||Date.now(),date:$('#f-d').value,s:pt($('#f-s').value||'0:0'),e:pt($('#f-e').value||'0:0'),name:$('#f-n').value.trim(),phone:$('#f-p').value.trim(),type:$('#f-t').value,status:$('#f-st').value,place:$('#f-pl').value.trim(),note:$('#f-no').value.trim()};
+  if(!a.date||!a.name)return alert('შეავსეთ თარიღი და პაციენტის სახელი');
+  if(a.e<=a.s)return alert('დასრულების დრო დაწყებას უნდა მოჰყვებოდეს');
+  const c=a.status=='cancelled'?[]:D.a.filter(x=>x.id!=a.id&&x.date==a.date&&x.status!='cancelled'&&x.s<a.e&&x.e>a.s);
+  if(c.length&&!confirm('ეს დრო დაკავებულია:\n'+c.map(x=>tm(x.s)+'–'+tm(x.e)+' '+x.name).join('\n')+'\n\nმაინც შევინახოთ?'))return;
+  const i=D.a.findIndex(x=>x.id==a.id);i>=0?D.a[i]=a:D.a.push(a);
+  /* ყოველკვირეული გამეორება (მხოლოდ ახალი ჯავშნისას); დაკავებულ დროს გამოტოვებს */
+  const rp=$('#f-r')?+$('#f-r').value:0;let skip=[];
+  for(let k=1;k<=rp;k++){const dd=ds(addD(pd(a.date),7*k));
+    if(D.a.some(x=>x.date==dd&&x.status!='cancelled'&&x.s<a.e&&x.e>a.s)){skip.push(dd);continue}
+    D.a.push({...a,id:a.id+k,date:dd})}
+  save();closeM();
+  if(skip.length)alert('გამოტოვებულია (დრო დაკავებულია):\n'+skip.map(x=>dl(pd(x))).join('\n'));cur=pd(a.date);draw();
+}
+function delA(id){if(confirm('წავშალოთ ჯავშანი?')){D.a=D.a.filter(x=>x.id!=id);save();closeM();draw()}}
+function notify(id,k){
+  const a=D.a.find(x=>x.id==id);if(!a.phone)return alert('ნომერი არ არის მითითებული');
+  const m=`გამარჯობა, ${a.name}, თქვენი ვიზიტი დაგეგმილია ${dl(pd(a.date))}, ${tm(a.s)} საათზე.${a.place?' ადგილი: '+a.place+'.':''}`;
+  let n=a.phone.replace(/\D/g,'');if(n.length==9)n='995'+n;
+  location.href=k=='wa'?'https://wa.me/'+n+'?text='+encodeURIComponent(m):'sms:'+a.phone+'?&body='+encodeURIComponent(m);
+}
+
+/* ===== გაზიარება ===== */
+let shS='w',shP=true;
+function shareBox(){
+  modal(`<h3 style="margin:0">გაზიარება</h3>
+  <label>რა გავაგზავნოთ</label><select id="sh-s" onchange="shS=this.value"><option value="w" ${shS=='w'?'selected':''}>არჩეული კვირის განრიგი</option><option value="m" ${shS=='m'?'selected':''}>არჩეული თვის განრიგი</option><option value="f" ${shS=='f'?'selected':''}>თავისუფალი დრო (თვე)</option></select>
+  <label class="sw"><input type="checkbox" id="sh-p" ${shP?'checked':''} onchange="shP=this.checked">ტელეფონის ნომრების ჩვენება</label>
+  <button class="btn p" onclick="doShare('wa')">გაგზავნა WhatsApp-ით</button>
+  <button class="btn" onclick="doShare('file')">ფაილად შენახვა (მხოლოდ წასაკითხი)</button>
+  <button class="btn" onclick="doShare('print')">ბეჭდვა / PDF</button>
+  <button class="btn" onclick="closeM()">დახურვა</button>`);
+}
+/* განრიგის მოდელი: სათაური + დღეები სტრიქონებით */
+function model(){
+  const days=shS=='w'?weekDays(cur):monthDays(cur),t=ds(new Date()),out=[];
+  days.forEach(d=>{const s=ds(d);let rows;
+    if(shS=='f'){if(s<t)return;const sl=slots(s);if(!sl||!sl.length)return;rows=['თავისუფალია: '+sl.map(tm).join(', ')]}
+    else{rows=active(s).map(a=>`${tm(a.s)}–${tm(a.e)} ${a.name}${shP&&a.phone?' ('+a.phone+')':''} [${TL[a.type]}]`);if(!rows.length&&shS=='m')return;if(!rows.length)rows=['ვიზიტები არ არის']}
+    out.push({h:dl(d),rows})});
+  return {t:(shS=='f'?'თავისუფალი დრო: ':'განრიგი: ')+(shS=='w'?title():MO[cur.getMonth()]+' '+cur.getFullYear()),days:out};
+}
+const toText=m=>m.t+'\n\n'+(m.days.map(d=>d.h+'\n'+d.rows.join('\n')).join('\n\n')||'ჩანაწერები არ არის');
+const toHtml=m=>`<h1 style="font-size:20px">${esc(m.t)}</h1>`+(m.days.map(d=>`<h2 style="font-size:16px;margin:16px 0 4px">${esc(d.h)}</h2><ul style="margin:0;padding-left:20px">${d.rows.map(r=>`<li>${esc(r)}</li>`).join('')}</ul>`).join('')||'<p>ჩანაწერები არ არის</p>');
+function doShare(k){
+  const m=model();
+  if(k=='wa')window.open('https://wa.me/?text='+encodeURIComponent(toText(m)),'_blank');
+  else if(k=='file')dl_('ganrigi-'+ds(cur)+'.html',`<!DOCTYPE html><html lang="ka"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(m.t)}</title></head><body style="font:16px/1.5 system-ui,sans-serif;max-width:640px;margin:auto;padding:16px;color:#14262b">${toHtml(m)}<p style="color:#5d7177;font-size:13px;margin-top:24px">შექმნილია: ${ds(new Date())}</p></body></html>`,'text/html');
+  else{$('#pr').innerHTML=toHtml(m);window.print()}
+}
+
+if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
+draw();
+/* გახსნისას: თუ IndexedDB-ში უფრო ახალი მონაცემებია, აღვადგენთ */
+idbGet().then(j=>{if(!j)return;try{const x=JSON.parse(j);if(x.a&&(!D.ts||x.ts>D.ts)){D=x;try{localStorage.setItem(KEY,j)}catch(e){}draw()}}catch(e){}});
+{const td=document.querySelector('.day.today');if(td)td.scrollIntoView({block:'start'})}
+</script>
+</body>
+</html>
